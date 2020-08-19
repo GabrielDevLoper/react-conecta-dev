@@ -1,32 +1,7 @@
-.header {
-  background-color: red;
-  position: fixed;
-  width: 100%;
-}
-
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
   min-height: 64px;
-}
-
-.main {
-  display: flex;
-  width: 1200px;
-  height: 100vh;
-  margin: 0 auto;
-}
-
-.nav-bar {
-  width: 350px;
-  background: blueviolet;
-  padding: 24px;
-}
-
-.feed {
-  background: yellow;
-  width: 100%;
-  padding: 24px;
 }
