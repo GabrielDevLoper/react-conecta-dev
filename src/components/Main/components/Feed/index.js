@@ -1,8 +1,9 @@
 import React from "react";
-// import "./styles.css";
+import useStyles from "./styles";
 
 function Feed() {
-  return <div className="feed">feed</div>;
+  const classes = useStyles();
+  return <div className={classes.feed}>feed</div>;
 }
 
 export default Feed;

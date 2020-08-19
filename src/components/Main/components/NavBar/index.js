@@ -1,8 +1,9 @@
 import React from "react";
-// import "./styles.css";
+import useStyles from "./styles";
 
 function NavBar() {
-  return <div className="nav-bar">navbar</div>;
+  const classes = useStyles();
+  return <div className={classes.navBar}>navbar</div>;
 }
 
 export default NavBar;

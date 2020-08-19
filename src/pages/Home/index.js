@@ -4,13 +4,14 @@ import React from "react";
 import Header from "../../components/Header";
 import Main from "../../components/Main";
 
-// import "./styles.css";
+import useStyles from "./styles";
 
 function Home() {
+  const classes = useStyles();
   return (
     <div>
       <Header />
-      <div className="toolbar" />
+      <div className={classes.toolbar} />
       <Main />
     </div>
   );

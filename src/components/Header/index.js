@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "@material-ui/core";
-// import "./styles.css";
+import useStyles from "./styles";
 
 function Header() {
+  const classes = useStyles();
   return (
-    <header className="header">
-      <div className="toolbar">
+    <header className={classes.header}>
+      <div className={classes.toolbar}>
         <div className="group1">
           <a href="/">Conecta Dev</a>
           <input type="text" />

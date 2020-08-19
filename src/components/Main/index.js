@@ -2,11 +2,12 @@ import React from "react";
 import Feed from "./components/Feed";
 import NavBar from "./components/NavBar";
 
-// import "./styles.css";
+import useStyles from "./styles";
 
 function Main() {
+  const classes = useStyles();
   return (
-    <main className="main">
+    <main className={classes.main}>
       <Feed />
       <NavBar />
     </main>
