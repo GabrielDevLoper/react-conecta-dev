@@ -4,6 +4,7 @@ import useStyles from "./styles";
 
 import Logo from "../../assets/logo.png";
 import { SvgIcon } from "@material-ui/core";
+import { Bell } from "react-feather";
 
 function Header() {
   const classes = useStyles();
@@ -15,6 +16,10 @@ function Header() {
           <Button variant="outlined" color="primary">
             NOVO POST
           </Button>
+
+          <SvgIcon>
+            <Bell></Bell>
+          </SvgIcon>
         </div>
       </Toolbar>
     </AppBar>
