@@ -15,7 +15,11 @@ function Header() {
         {/* esta div vazial apenas com uma classe, faz a separação dos elementos */}
         <div className={classes.grow} />
         <div className={classes.userSection}>
-          <Button variant="outlined" color="primary" className={classes.button}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
             NOVO POST
           </Button>
           <IconButton>
