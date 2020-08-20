@@ -3,7 +3,6 @@ import React from "react";
 import {
   Card,
   CardHeader,
-  CardMedia,
   CardActionArea,
   CardContent,
   CardActions,
