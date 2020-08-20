@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => ({
   navBar: {
     width: "275px",
     padding: theme.spacing(2),
+    marginRight: theme.spacing(2),
   },
   button: {
     width: "100%",
