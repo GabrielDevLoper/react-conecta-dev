@@ -1,7 +1,8 @@
 import React from "react";
+import { StyledInput } from "./styles";
 
 function SignIn() {
-  return <h1>Login</h1>;
+  return <StyledInput>Entrar</StyledInput>;
 }
 
 export default SignIn;
