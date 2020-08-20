@@ -1,11 +1,9 @@
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   main: {
-    display: "flex",
-    width: "1200px",
     height: "100vh",
-    margin: " 0 auto",
+    padding: 24,
   },
 }));
 

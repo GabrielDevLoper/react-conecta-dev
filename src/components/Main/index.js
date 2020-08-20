@@ -1,4 +1,8 @@
 import React from "react";
+
+import { Container, Box } from "@material-ui/core";
+
+//Componentes
 import Feed from "./components/Feed";
 import NavBar from "./components/NavBar";
 
@@ -8,8 +12,12 @@ function Main() {
   const classes = useStyles();
   return (
     <main className={classes.main}>
-      <Feed />
-      <NavBar />
+      <Container maxWidth="lg">
+        <Box display="flex">
+          <NavBar />
+          <Feed />
+        </Box>
+      </Container>
     </main>
   );
 }

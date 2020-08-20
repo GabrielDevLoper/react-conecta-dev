@@ -1,10 +1,12 @@
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   navBar: {
-    width: "350px",
-    background: "#8a2be2",
-    padding: "24px",
+    width: "275px",
+    padding: theme.spacing(2),
+  },
+  button: {
+    width: "100%",
   },
 }));
 
