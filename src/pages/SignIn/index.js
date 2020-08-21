@@ -11,6 +11,7 @@ import {
   Link,
   Hidden,
   FormHelperText,
+  TextField,
 } from "@material-ui/core";
 import { useStyles, StyledTextField } from "./styles";
 
@@ -18,7 +19,6 @@ import { useStyles, StyledTextField } from "./styles";
 import LogoDev from "../../assets/dev.svg";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-import api from "../../services/api";
 import authServices from "../../services/authServices";
 
 function SignIn() {
@@ -64,6 +64,8 @@ function SignIn() {
           container
           xl={6}
           lg={6}
+          sm={12}
+          xs={12}
           direction="column"
           justify="center"
           alignItems="center"
@@ -76,6 +78,7 @@ function SignIn() {
             bgcolor="#202024"
             p={5}
             borderRadius={8}
+            className={classes.responsive}
           >
             <Avatar className={classes.avatar}>
               <LockOutlinedIcon />

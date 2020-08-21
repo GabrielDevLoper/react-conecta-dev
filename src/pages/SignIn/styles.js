@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles, useTheme } from "@material-ui/core/styles";
 import { TextField } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -52,31 +52,43 @@ const useStyles = makeStyles((theme) => ({
       color: "#9034fa",
     },
   },
+
+  responsive: {
+    [theme.breakpoints.down("xs")]: {
+      padding: theme.spacing(2),
+    },
+  },
 }));
 
-const StyledTextField = styled(TextField)`
-  background: #121214;
-  border-radius: 8px;
-  label {
-    color: #fff;
-  }
-  label.Mui-focused {
-    color: #fff;
-  }
-  .MuiOutlinedInput-root {
-    color: #fff;
-    width: 350px;
-    fieldset {
-      border-color: none;
-    }
-    &:hover fieldset {
-      border-color: transparent;
-      outline-color: transparent;
-    }
-    &.Mui-focused fieldset {
-      border-color: #7000f2;
-    }
-  }
-`;
+const StyledTextField = styled(TextField)(({ theme }) => ({
+  background: "#121214",
+  borderRadius: "8px",
+
+  label: {
+    color: "#fff",
+  },
+  "label.Mui-focused": {
+    color: "#fff",
+  },
+
+  ".MuiOutlinedInput-input": {
+    color: "#fff",
+    width: "350px",
+    [useTheme().breakpoints.down("xs")]: {
+      width: "250px",
+    },
+
+    fieldset: {
+      borderColor: "none",
+    },
+    "&:hover fieldset": {
+      borderColor: "transparent",
+      outlineColor: "transparent",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#7000f2",
+    },
+  },
+}));
 
 export { useStyles, StyledTextField };
