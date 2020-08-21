@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 //Componentes e estilizações
-import { Grid, Box, Typography, Avatar, Button, Link } from "@material-ui/core";
+import {
+  Grid,
+  Box,
+  Typography,
+  Avatar,
+  Button,
+  Link,
+  Hidden,
+  FormHelperText,
+} from "@material-ui/core";
 import { useStyles, StyledTextField } from "./styles";
 
 //Icones ou imagens
@@ -10,39 +19,51 @@ import LogoDev from "../../assets/dev.svg";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
 import api from "../../services/api";
+import authServices from "../../services/authServices";
 
 function SignIn() {
   const classes = useStyles();
   const history = useHistory();
 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   async function handleSignIn(e) {
     e.preventDefault();
-    const response = await api.post("/api/home/login");
-    console.log(response);
-    // history.push("/");
+    try {
+      await authServices.signIn(email, password);
+      history.push("/");
+    } catch (error) {
+      setErrorMessage(error.response.data.message);
+      console.log(error.response.data.message);
+    }
   }
 
   return (
     <div className={classes.root}>
       <Grid container>
+        <Hidden mdDown>
+          <Grid
+            item
+            container
+            xl={6}
+            lg={6}
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <img src={LogoDev} alt="logo" className={classes.imgLogo} />
+            <Typography className={classes.title}>
+              <strong>Faça seu login na plataforma</strong>
+            </Typography>
+          </Grid>
+        </Hidden>
         <Grid
           item
           container
-          md={6}
-          direction="column"
-          justify="center"
-          alignItems="center"
-        >
-          <img src={LogoDev} alt="logo" className={classes.imgLogo} />
-          <Typography className={classes.title}>
-            <strong>Faça seu login na plataforma</strong>
-          </Typography>
-        </Grid>
-
-        <Grid
-          item
-          container
-          md={6}
+          xl={6}
+          lg={6}
           direction="column"
           justify="center"
           alignItems="center"
@@ -69,6 +90,8 @@ function SignIn() {
                 label="E-mail"
                 autoFocus
                 color="secondary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
 
               <StyledTextField
@@ -80,7 +103,12 @@ function SignIn() {
                 name="password"
                 margin="normal"
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
+              {errorMessage && (
+                <FormHelperText error>{errorMessage}</FormHelperText>
+              )}
               <Grid container>
                 <Grid item>
                   <Link
