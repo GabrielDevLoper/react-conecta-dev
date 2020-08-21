@@ -22,12 +22,12 @@ function Header() {
           >
             NOVO POST
           </Button>
-          <IconButton>
+          <IconButton className={classes.bell}>
             <SvgIcon>
               <Bell></Bell>
             </SvgIcon>
           </IconButton>
-          <Avatar alt="Gabriel Barreto" src="/" className={classes.bell} />
+          <Avatar alt="Gabriel Barreto" src="/" className={classes.avatar} />
         </div>
       </Toolbar>
     </AppBar>

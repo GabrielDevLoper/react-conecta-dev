@@ -5,6 +5,10 @@ const useStyles = makeStyles((theme) => ({
     width: "275px",
     padding: theme.spacing(2),
     marginRight: theme.spacing(2),
+
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   button: {
     width: "100%",

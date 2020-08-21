@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   appBar: {
     boxShadow: "none",
   },
@@ -20,10 +20,21 @@ const useStyles = makeStyles(() => ({
 
   button: {
     marginRight: 10,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+
+  avatar: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 
   bell: {
-    marginLeft: 10,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));
 

@@ -12,7 +12,7 @@ function Main() {
   const classes = useStyles();
   return (
     <main className={classes.main}>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Box display="flex">
           <NavBar />
           <Feed />
