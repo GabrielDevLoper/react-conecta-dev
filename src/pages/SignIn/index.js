@@ -1,13 +1,26 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
+//Componentes e estilizações
 import { Grid, Box, Typography, Avatar, Button, Link } from "@material-ui/core";
-
 import { useStyles, StyledTextField } from "./styles";
-import LogoDev from "../../assets/dev.svg";
 
+//Icones ou imagens
+import LogoDev from "../../assets/dev.svg";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+
+import api from "../../services/api";
 
 function SignIn() {
   const classes = useStyles();
+  const history = useHistory();
+
+  async function handleSignIn(e) {
+    e.preventDefault();
+    const response = await api.post("/api/home/login");
+    console.log(response);
+    // history.push("/");
+  }
 
   return (
     <div className={classes.root}>
@@ -51,7 +64,6 @@ function SignIn() {
                 variant="outlined"
                 margin="normal"
                 required
-                fullwidth
                 id="email"
                 name="email"
                 label="E-mail"
@@ -63,12 +75,10 @@ function SignIn() {
                 id="standard-adornment-password"
                 variant="outlined"
                 required
-                fullwidth
                 color="secondary"
                 label="Senha"
                 name="password"
                 margin="normal"
-                disableUnderline={false}
                 type="password"
               />
               <Grid container>
@@ -91,6 +101,7 @@ function SignIn() {
                 type="submit"
                 color="secondary"
                 className={classes.button}
+                onClick={handleSignIn}
               >
                 Entrar
               </Button>
