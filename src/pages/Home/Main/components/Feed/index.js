@@ -1,11 +1,11 @@
 import React from "react";
 import useStyles from "./styles";
 
-import avatar from "../../../../assets/avatar.jpg";
-import post from "../../../../assets/postJS.jpeg";
+import avatar from "../../../../../assets/avatar.jpg";
+import post from "../../../../../assets/postJS.jpeg";
 
 //componentes
-import PostCard from "../../../PostCard";
+import PostCard from "../../../../../components/PostCard";
 
 const posts = [
   {

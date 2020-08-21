@@ -1,8 +1,8 @@
 import React from "react";
 
 //componentes
-import Header from "../../components/Header";
-import Main from "../../components/Main";
+import Header from "./Header";
+import Main from "./Main";
 
 import useStyles from "./styles";
 

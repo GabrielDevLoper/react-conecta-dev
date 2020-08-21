@@ -2,7 +2,7 @@ import React from "react";
 import { Button, AppBar, Toolbar, Avatar, IconButton } from "@material-ui/core";
 import useStyles from "./styles";
 
-import Logo from "../../assets/logo.png";
+import Logo from "../../../assets/logo.png";
 import { SvgIcon } from "@material-ui/core";
 import { Bell } from "react-feather";
 
