@@ -9,7 +9,7 @@ import useStyles from "./styles";
 function Home() {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       <Header />
       <div className={classes.toolbar} />
       <Main />
