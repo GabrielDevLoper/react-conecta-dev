@@ -1,12 +1,10 @@
 import React from "react";
-import { Button, AppBar, Toolbar, IconButton } from "@material-ui/core";
+import { Button, AppBar, Toolbar } from "@material-ui/core";
 import useStyles from "./styles";
 
 import Logo from "../../../assets/logo.png";
-import { SvgIcon } from "@material-ui/core";
-import { Bell } from "react-feather";
 
-import { Account } from "./components";
+import { Account, Notification, WritePost } from "./components";
 
 function Header() {
   const classes = useStyles();
@@ -17,18 +15,8 @@ function Header() {
         {/* esta div vazial apenas com uma classe, faz a separação dos elementos */}
         <div className={classes.grow} />
         <div className={classes.userSection}>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-          >
-            NOVO POST
-          </Button>
-          <IconButton className={classes.bell}>
-            <SvgIcon>
-              <Bell />
-            </SvgIcon>
-          </IconButton>
+          <WritePost />
+          <Notification />
           <Account />
         </div>
       </Toolbar>
