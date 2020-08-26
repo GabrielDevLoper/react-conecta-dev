@@ -43,7 +43,7 @@ function PostCard({ post }) {
           {post.hashtags}
         </Typography>
         <CardActionArea>
-          <img src={post.image} alt="image" className={classes.image} />
+          <img src={post.image} alt="img" className={classes.image} />
         </CardActionArea>
       </CardContent>
       <CardActions disableSpacing>

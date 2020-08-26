@@ -1,10 +1,12 @@
 import React from "react";
-import { Button, AppBar, Toolbar, Avatar, IconButton } from "@material-ui/core";
+import { Button, AppBar, Toolbar, IconButton } from "@material-ui/core";
 import useStyles from "./styles";
 
 import Logo from "../../../assets/logo.png";
 import { SvgIcon } from "@material-ui/core";
 import { Bell } from "react-feather";
+
+import { Account } from "./components";
 
 function Header() {
   const classes = useStyles();
@@ -24,10 +26,10 @@ function Header() {
           </Button>
           <IconButton className={classes.bell}>
             <SvgIcon>
-              <Bell></Bell>
+              <Bell />
             </SvgIcon>
           </IconButton>
-          <Avatar alt="Gabriel Barreto" src="/" className={classes.avatar} />
+          <Account />
         </div>
       </Toolbar>
     </AppBar>

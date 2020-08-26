@@ -11,7 +11,6 @@ import {
   Link,
   Hidden,
   FormHelperText,
-  TextField,
 } from "@material-ui/core";
 import { useStyles, StyledTextField } from "./styles";
 
@@ -29,7 +28,6 @@ function SignIn() {
 
   async function handleSignIn(e) {
     e.preventDefault();
-
     history.push("/");
   }
 
