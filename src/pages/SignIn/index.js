@@ -19,8 +19,6 @@ import { useStyles, StyledTextField } from "./styles";
 import LogoDev from "../../assets/dev.svg";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-import authServices from "../../services/authServices";
-
 function SignIn() {
   const classes = useStyles();
   const history = useHistory();
@@ -31,13 +29,8 @@ function SignIn() {
 
   async function handleSignIn(e) {
     e.preventDefault();
-    try {
-      await authServices.signIn(email, password);
-      history.push("/");
-    } catch (error) {
-      setErrorMessage(error.response.data.message);
-      console.log(error.response.data.message);
-    }
+
+    history.push("/");
   }
 
   return (
