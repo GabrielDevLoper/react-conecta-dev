@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
-import { Avatar, Menu, MenuItem } from "@material-ui/core";
+import { Avatar, Menu, MenuItem, Switch, useTheme } from "@material-ui/core";
 
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import EmailIcon from "@material-ui/icons/Email";
@@ -15,6 +15,7 @@ function Account() {
   const classes = useStyles();
   const ref = useRef();
   const history = useHistory();
+  const theme = useTheme();
 
   const [isVisible, setIsVisible] = useState(false);
 
@@ -57,6 +58,10 @@ function Account() {
         <MenuItem onClick={handleLogout}>
           <ExitToAppIcon className={classes.icons} />
           Sair
+        </MenuItem>
+        <MenuItem>
+          <Switch color="primary" />
+          Modo Escuro
         </MenuItem>
       </Menu>
     </>

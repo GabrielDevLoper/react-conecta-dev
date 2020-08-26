@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
 
   img: {
     maxHeight: 55,
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 
   grow: {
