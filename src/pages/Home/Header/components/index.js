@@ -1,3 +1,3 @@
 export { default as Account } from "./Account";
-export { default as Notification } from "./Notifications";
+export { default as Notifications } from "./Notifications";
 export { default as WritePost } from "./WritePost";

@@ -4,7 +4,7 @@ import useStyles from "./styles";
 import { IconButton, SvgIcon, Popover } from "@material-ui/core";
 import { Bell } from "react-feather";
 
-function Notification() {
+function Notifications() {
   const classes = useStyles();
   const ref = useRef(null);
 
@@ -44,4 +44,4 @@ function Notification() {
   );
 }
 
-export default Notification;
+export default Notifications;

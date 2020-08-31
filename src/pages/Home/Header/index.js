@@ -1,10 +1,10 @@
 import React from "react";
-import { Button, AppBar, Toolbar } from "@material-ui/core";
+import { AppBar, Toolbar } from "@material-ui/core";
 import useStyles from "./styles";
 
 import Logo from "../../../assets/logo.png";
 
-import { Account, Notification, WritePost } from "./components";
+import { Account, Notifications, WritePost } from "./components";
 
 function Header() {
   const classes = useStyles();
@@ -16,7 +16,7 @@ function Header() {
         <div className={classes.grow} />
         <div className={classes.userSection}>
           <WritePost />
-          <Notification />
+          <Notifications />
           <Account />
         </div>
       </Toolbar>
